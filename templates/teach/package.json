@@ -1,0 +1,8 @@
+{
+    "private":  true,
+    "name":  "dream-teach",
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build"
+                }
+}

@@ -1,0 +1,9 @@
+{
+    "title":  "Serve — Booking",
+    "desc":  "Villa-Kathreyna style: rooms/services, calendar, reserve, GCash proof.",
+    "features":  [
+                     "calendar (free)",
+                     "reserve form (free)",
+                     "GCash proof (needs internet)"
+                 ]
+}

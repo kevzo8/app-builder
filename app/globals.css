@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f5f5f7;
+  --foreground: #1d1d1f;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+.font-display, .font-deco { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", var(--font-body), "Inter", "Segoe UI", sans-serif; letter-spacing: -0.02em; }
+.font-body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-body), "Inter", "Segoe UI", sans-serif; }
+
+body {
+  background: #f5f5f7;
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-body), "Inter", "Segoe UI", sans-serif;
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* Apple liquid-glass wash - cool neutral, no seams */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(0, 122, 255, 0.14), transparent 70%),
+    radial-gradient(120% 90% at 85% 5%, rgba(175, 82, 222, 0.12), transparent 70%),
+    radial-gradient(140% 100% at 50% 100%, rgba(100, 210, 255, 0.12), transparent 72%),
+    linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 45%, #ececf1 100%);
+}
+
+.dark body {
+  background: #000000;
+  color: #f5f5f7;
+}
+
+.dark body::before {
+  background:
+    radial-gradient(120% 90% at 15% 0%, rgba(10, 132, 255, 0.22), transparent 70%),
+    radial-gradient(120% 90% at 85% 5%, rgba(191, 90, 242, 0.18), transparent 70%),
+    radial-gradient(140% 100% at 50% 100%, rgba(100, 210, 255, 0.14), transparent 72%),
+    linear-gradient(180deg, #1d1d1f 0%, #000000 55%, #000000 100%);
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.45));
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.dark .glass {
+  background: linear-gradient(135deg, rgba(28,28,30,0.72), rgba(44,44,46,0.55));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.glass-strong {
+  background: linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,255,255,0.65));
+  backdrop-filter: blur(30px) saturate(1.8);
+  -webkit-backdrop-filter: blur(30px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+.dark .glass-strong {
+  background: linear-gradient(135deg, rgba(36,36,38,0.9), rgba(28,28,30,0.85));
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+input, select, textarea {
+  color: #231318 !important;
+  background: rgba(255,255,255,0.92) !important;
+}
+.dark input, .dark select, .dark textarea {
+  color: #f5e9e4 !important;
+  background: rgba(30,18,24,0.9) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+input::placeholder { color: #9aa3b2 !important; }
+.dark input::placeholder { color: #8b7b85 !important; }
+
+/* animations */
+@keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+@keyframes drift { 0% { transform: translate(0,0) scale(1) } 50% { transform: translate(30px,-20px) scale(1.08) } 100% { transform: translate(0,0) scale(1) } }
+@keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+@keyframes snow { 0% { transform: translateY(-10px); opacity: 0 } 15% { opacity: 0.9 } 100% { transform: translateY(110vh); opacity: 0 } }
+
+.anim-floaty { animation: floaty 5s ease-in-out infinite; }
+.anim-fade-up { animation: fadeUp 0.7s ease both; }
+.anim-drift { animation: drift 12s ease-in-out infinite; }
+.shimmer-text {
+  background: linear-gradient(110deg, #7f1d1d 20%, #dc2626 40%, #38bdf8 55%, #7f1d1d 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+.dark .shimmer-text {
+  background: linear-gradient(110deg, #fecaca 20%, #f87171 40%, #7dd3fc 55%, #fecaca 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.marquee-track { animation: marquee 28s linear infinite; }
+.snowflake { position: fixed; top: -20px; pointer-events: none; z-index: 5; animation: snow linear infinite; }

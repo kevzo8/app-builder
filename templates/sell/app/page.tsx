@@ -1,0 +1,1 @@
+export default function Page(){return <main style={{fontFamily:'-apple-system,Inter',padding:32}}><h1>Dream sell starter</h1><p>Generated locally by DreamBuild. Deploy: push to GitHub, import in Vercel, npx convex dev.</p></main>}

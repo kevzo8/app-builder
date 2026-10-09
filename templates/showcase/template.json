@@ -1,0 +1,9 @@
+{
+    "title":  "Showcase — Portfolio",
+    "desc":  "Photography portfolio: gallery, packages, contact. Cloudflare Pages unlimited bandwidth free.",
+    "features":  [
+                     "gallery (free)",
+                     "packages (free)",
+                     "contact (Convex free tier)"
+                 ]
+}

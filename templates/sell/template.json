@@ -1,0 +1,9 @@
+{
+    "title":  "Sell — Store Ordering",
+    "desc":  "RF-style ordering: products, cart, tracking, GCash proof. Free: Vercel+Convex. Needs internet only for deploy.",
+    "features":  [
+                     "product list (free/offline)",
+                     "cart + tracking (free)",
+                     "GCash upload (needs internet)"
+                 ]
+}

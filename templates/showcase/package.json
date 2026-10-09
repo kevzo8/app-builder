@@ -1,0 +1,8 @@
+{
+    "private":  true,
+    "name":  "dream-showcase",
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build"
+                }
+}

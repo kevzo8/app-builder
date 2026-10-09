@@ -1,0 +1,9 @@
+{
+    "title":  "Teach — Knowledge Hub",
+    "desc":  "School-style: days, lectures, XP quiz. Supabase tables feel like Excel for teachers.",
+    "features":  [
+                     "20-day outline (free)",
+                     "XP quiz (free)",
+                     "PDF readings (free)"
+                 ]
+}

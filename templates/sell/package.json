@@ -1,0 +1,8 @@
+{
+    "private":  true,
+    "name":  "dream-sell",
+    "scripts":  {
+                    "dev":  "next dev",
+                    "build":  "next build"
+                }
+}
