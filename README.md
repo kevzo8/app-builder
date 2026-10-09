@@ -44,5 +44,5 @@ Windows 11, Node 22.16.0, Chrome (File System Access + export ZIP fallback).
 Models: `qwen2.5-coder:7b-instruct-q4_K_M` + `nomic-embed-text` via Ollama; fallback deterministic hash vectors + scripted planner (no cloud).
 Frameworks: Next.js 16, React 19, Tailwind 4, lucide-react SVG, jszip, Convex (optional secondary sync only).
 Sidecar: Node `local-builder/server.mjs`, allowlist: `npm install`, `npm run dev`, `ollama pull/list`, `npx convex dev --once`, `git init`. All steps require Approve click, 120s timeout.
-Templates: `templates/sell|teach|serve|showcase` built during hackathon from author's RF/knowledge/Villa patterns.
+Templates: `templates/sell|teach|serve|showcase|present|evite` built during hackathon from author's RF/knowledge/Villa patterns. Anything else: agent customizes via approved `fs.write` steps.
 AI dev tools: opencode + Devin-style agent loop (custom JSON planner inspired by opencode).

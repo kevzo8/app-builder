@@ -35,12 +35,14 @@ export const STACKS: StackOption[] = [
 ];
 
 export type Budget = "tipid" | "standard" | "scale";
-export type Archetype = "sell" | "teach" | "serve" | "showcase";
+export type Archetype = "sell" | "teach" | "serve" | "showcase" | "present" | "evite";
 
 export function recommendStack(archetype: Archetype, budget: Budget) {
   if (budget === "scale") return { frontend: "amplify", backend: "aws-serverless", dns: "route53", why: "Scale mode: AWS pays off only after product-market fit. Start Vercel+Convex, migrate later." };
   if (archetype === "showcase") return { frontend: "cf-pages", backend: "convex", dns: "cloudflare-dns", why: "Portfolio is static + gallery. Cloudflare Pages = unlimited bandwidth free. Convex only for contact form." };
   if (archetype === "teach") return { frontend: "vercel", backend: "supabase", dns: "cloudflare-dns", why: "School data fits tables. Supabase looks like Excel for teachers; Vercel hosts Next.js." };
+  if (archetype === "present") return { frontend: "cf-pages", backend: "convex", dns: "cloudflare-dns", why: "Decks are static slides. Cloudflare Pages = unlimited free bandwidth for presenting anywhere. Convex only for Q&A/polls." };
+  if (archetype === "evite") return { frontend: "cf-pages", backend: "convex", dns: "cloudflare-dns", why: "Invites are one pretty page + RSVP form. Cloudflare Pages hosts free, Convex collects guests." };
   return { frontend: "vercel", backend: "convex", dns: "cloudflare-dns", why: "Tipid default: Vercel + Convex + Cloudflare = ₱0 until you grow. GitHub connects all." };
 }
 

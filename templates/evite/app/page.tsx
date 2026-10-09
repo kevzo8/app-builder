@@ -1,0 +1,1 @@
+export default function Page(){return <main style={{fontFamily:'-apple-system,Inter',padding:32}}><h1>Dream e-vite starter</h1><p>Invitation generated locally by DreamBuild. Share the link, collect RSVPs via Convex free tier.</p></main>}

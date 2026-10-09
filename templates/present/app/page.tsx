@@ -1,0 +1,1 @@
+export default function Page(){return <main style={{fontFamily:'-apple-system,Inter',padding:32}}><h1>Dream present starter</h1><p>Slide deck generated locally by DreamBuild. Present offline, deploy free on Cloudflare Pages or Vercel.</p></main>}

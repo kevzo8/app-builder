@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import ThemeToggle from "../components/ThemeToggle";
 import { STACKS, recommendStack, GLOSSARY, type Archetype, type Budget } from "../lib/stacks";
 import { classifyArchetype, improvePrompt } from "../lib/rag";
-import { Sparkles, Store, GraduationCap, CalendarCheck, Camera, Cpu, WifiOff, Wifi, FolderDown, Play, Check, Info, Globe, Database, LayoutTemplate, BookOpen } from "lucide-react";
+import { Sparkles, Store, GraduationCap, CalendarCheck, Camera, Presentation, Heart, Cpu, WifiOff, Wifi, FolderDown, Play, Check, Info, Globe, Database, LayoutTemplate, BookOpen } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +12,8 @@ const ARCH: { id: Archetype; label: string; icon: any; hint: string }[] = [
   { id: "teach", label: "Teach", icon: GraduationCap, hint: "School / training like Knowledge Center" },
   { id: "serve", label: "Serve", icon: CalendarCheck, hint: "Booking like Villa Kathreyna" },
   { id: "showcase", label: "Showcase", icon: Camera, hint: "Photo portfolio / menu site" },
+  { id: "present", label: "Present", icon: Presentation, hint: "Slide decks as web apps" },
+  { id: "evite", label: "E-vite", icon: Heart, hint: "Wedding / birthday invites + RSVP" },
 ];
 
 export default function DreamBuild() {
@@ -115,9 +117,9 @@ export default function DreamBuild() {
           {step === 1 && (
             <section className="glass-strong rounded-3xl p-6 anim-fade-up">
               <h1 className="font-display text-3xl font-bold tracking-tight">What is your dream app?</h1>
-              <p className="mt-1 text-sm opacity-70">Type like you talk. No code needed. Example: frozen meat ordering for Sta Mesa with GCash.</p>
+              <p className="mt-1 text-sm opacity-70">Type like you talk — literally anything: shop, class, booking, portfolio, slides, invite. No code needed.</p>
               <textarea value={dream} onChange={(e) => setDream(e.target.value)} rows={4} placeholder="I want an app for my sari-sari store to take orders..." className="mt-3 min-h-[110px] w-full rounded-2xl border border-slate-200 dark:border-white/10 px-4 py-3 text-base outline-none focus:ring-2 focus:ring-blue-500" />
-              <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {ARCH.map((a) => (
                   <div key={a.id} className={`rounded-2xl border p-3 text-sm ${archetype === a.id ? "border-blue-500 bg-blue-500/10" : "border-slate-200 dark:border-white/10"}`}>
                     <a.icon size={18} /><p className="mt-1 font-bold">{a.label} {archetype === a.id && <span className="text-blue-600">• auto</span>}</p><p className="text-xs opacity-60">{a.hint}</p>

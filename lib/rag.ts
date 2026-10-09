@@ -44,8 +44,10 @@ export function search(chunks: Chunk[], query: string, topK = 4): Chunk[] {
     .map((x) => x.c);
 }
 
-export function classifyArchetype(dream: string): "sell" | "teach" | "serve" | "showcase" {
+export function classifyArchetype(dream: string): "sell" | "teach" | "serve" | "showcase" | "present" | "evite" {
   const t = dream.toLowerCase();
+  if (/present|slide|deck|pitch|talk|keynote|powerpoint|demo day/.test(t)) return "present";
+  if (/invit|wedding|birthday|binyag|debut|rsvp|christening|baptism/.test(t)) return "evite";
   if (/class|school|train|lesson|quiz|xp|student|als|tutorial/.test(t)) return "teach";
   if (/book|reserve|room|villa|clinic|salon|repair|schedule|appointment/.test(t)) return "serve";
   if (/photo|portfolio|gallery|menu|church|freelance|design/.test(t)) return "showcase";
