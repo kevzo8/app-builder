@@ -24,6 +24,12 @@ ollama pull nomic-embed-text
 ```
 Without Ollama the app still works via scripted fallback plan + hash-embed RAG fallback.
 
+## Going live (zero knowledge → developer)
+
+You built offline. To go online, follow **`docs/INTEGRATIONS.md`** —
+click-by-click guides for GitHub, Convex/Supabase, Vercel/Netlify,
+Namecheap + Cloudflare. Tipid total: ~₱600/yr (domain only), rest ₱0.
+
 ## What runs locally vs internet
 
 Local: LLM planning, embeddings + RAG over templates/uploads, template apply, file writes, prompt coach, stack recommender.
